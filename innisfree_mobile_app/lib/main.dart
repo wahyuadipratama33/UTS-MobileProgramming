@@ -1,32 +1,47 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-void main() {
-  runApp(MyApp());
-}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Innisfree',
+import 'package:innisfree_mobile_app/carousel.dart';
+
+void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage()
-      );
-  }
+      home: MyApp(),
+    ));
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
 }
 
-//coba komen
-class MyHomePage extends StatelessWidget {
+class _MyAppState extends State<MyApp> {
   @override
-  Widget build(BuildContext context){
-    Size size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          width: size.width,
-          height: size.height,
-          child: ListView(),
-        ),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Container(
+            height: 215,
+            decoration: BoxDecoration(
+              color: Color(0xff024137),
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(15),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
+//class MyClipper extends CustomClipper<Path> {}
+
+/*class CarouselDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Home',
+      debugShowCheckedModeBanner: false,
+      home: CarouselWithIndicatorDemo(),
+    );
+  }
+}*/
